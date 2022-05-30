@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import UserContext from "../contexts/UserContext";
 
 
-export function Header () {
+export default function Header () {
     const { userData } = useContext(UserContext);
     console.log(`dados que vão pro header ${userData.image}`);
     return (
@@ -14,10 +14,11 @@ export function Header () {
                 <img src={userData.image} alt="avatar" />
             </div>
         </Container>
-    )
+    );
 }
 
 const Container = styled.div`
+    z-index: 1;
     width: 100%;
     height: 70px;
     background-color: #126ba5;
@@ -51,4 +52,4 @@ const Container = styled.div`
         border-radius: 50%;
     }
 
-`
+`;

@@ -5,7 +5,8 @@ import styled from 'styled-components';
 
 import Habit from '../Habit';
 import UserContext from '../contexts/UserContext';
-import { Header } from '../layouts/Header';
+import  Header from '../layouts/Header';
+import Footer from '../layouts/Footer';
 
 
 
@@ -65,7 +66,7 @@ export default function ScreenListTodayHabits() {
                 )
             })
         } else {
-            return <p>Carregando...</p>
+            return <p>Nenhum hábito concluído ainda</p>
         }
     }
 
@@ -73,8 +74,14 @@ export default function ScreenListTodayHabits() {
         <>
             <Header />
             <Container>
+                <div className="header">
+                    <div className="title">
+                        Segunda, 17/05
+                    </div>
+                </div>
                 {mountHabits()}
             </Container>
+            <Footer />
         </>
 
     );
@@ -87,6 +94,23 @@ const Container = styled.div`
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+
+        .header{
+            
+            width: 90%;
+    
+            .title {
+                color: #126ba5;
+                font-weight: 400;
+                font-size: 23px;
+                line-height: 29px;
+            }
+
+            p{
+                color: #bababa;
+                font-size: 18px;
+            }
+        }
         
 
         p{

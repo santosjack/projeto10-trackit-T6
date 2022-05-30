@@ -42,6 +42,7 @@ export default function ScreenLogin() {
     }
 
     setUserData(data);
+    localStorage.setItem('token', JSON.stringify(data.token));
     console.log(userData);
 
     function renderFormLogin() {
